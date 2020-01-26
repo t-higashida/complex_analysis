@@ -1,0 +1,84 @@
+\section{巾級数}
+
+\textbf{a) 関数を項とする級数}
+
+（保留）
+
+\textbf{b) 関数を項とする級数}
+\[
+	\sum_{n=0}^\infty	a_n(z-c)^n
+	=
+	a_0	+	a_1(z-c)	+	a_2(z-c)^2	+	\cdots	+	a_n(z-c)^n	+	\cdots
+\]
+なる形の級数を$c$を\textbf{中心}(center)とする\textbf{巾級数}(power series)という．
+巾級数は複素解析において基本的である．本項では原点$0$を中心とする巾級数:
+\[
+	\sum_{n=0}^\infty	a_nz^n	=	a_0	+	a_1z+a_2z^2	+	\cdots	a_nz^n	+	\cdots
+\]
+を考察する．$z$を$z-c$で置き換えれば，考察の結果はそのまま任意の点$c$を中心とする巾級数
+に適用される．
+
+巾級数$\sum_{n=0}^\infty	a_n	z^n$が収束するために$z$の満たすべき条件を求める．そのために，
+ある複素数$z$に対して$\sum_{n=0}^\infty	a_nz^n$が収束したとする．そうすれば，$\lim_{n\rightarrow\infty}a_nz^n=0$で
+あるから，すべての自然数$n$について
+\[
+	|a_nz^n|	\leqq	M
+\]
+となる正の実数$M$が存在する．このような$M$を一つ定めれば
+\[
+	|z||a_n|^{1/n}	\leqq	M^{1/n}
+\]
+したがって，$\displaystyle	\lim_{n\rightarrow	\infty}	M^{1/n}=1$であるから，
+\begin{equation}
+	|z|\limsup_{n\rightarrow	\infty}	|a_n|^{1/n}	\leqq	1.
+	\label{eq1.16}
+\end{equation}
+以下の（ⅰ），（ⅱ），（ⅲ）の場合分けをする．
+
+（ⅰ）$\displaystyle	0	<	\limsup_{n\rightarrow	\infty}	|a_n|	<	+	\infty$なる場合には
+$	r=\frac{\displaystyle	1}{\displaystyle\limsup_{n\rightarrow	\infty}|a_n|^{1/n}}
+$
+とおけば，(\ref{eq1.16})から直ちに不等式：
+\begin{equation}
+	|z|	\leqq	r	\label{eq1.17}
+\end{equation}
+を得る．
+	
+（ⅱ）$\displaystyle	\limsup_{n\rightarrow	\infty}	|a_n|	=	\infty$なる場合には
+$r=0$と置く．$|z|>0$ならば(\ref{eq1.16})により，
+$\displaystyle	\limsup_{n\rightarrow	\infty}	|a_n|^{1/n}	<	1/|z|	<	+\infty$でなければならないから，
+この場合$|z|=0$，すなわち(\ref{eq1.17})が成り立つ(等号)．
+
+（ⅲ）$\displaystyle	\limsup_{n\rightarrow	\infty}	|a_n|	=	0$なる場合には$r=+\infty$とおく．
+（ニュアンスは解るが定義不明．代数的におく，という意味か？）．そうすれば(\ref{eq1.17})は自明である．このように定義された$r$に対して，
+次の定理が成り立つ．
+
+\定理{1.8}
+巾級数$\displaystyle	\sum_{n=0}^\infty	a_nz^n$は$|z|<r$のとき絶対収束し，
+$|z|>r$のとき発散する．
+
+\証明
+$|z|<r$のとき$|z|<	\kappa <r$なる実数$\kappa $を定めれば，
+\[
+	\frac{1}{\kappa }	>	\frac{1}{r}	=	\limsup_{n\rightarrow	\infty}|a_n|^{1/n}
+\]
+となるから，自然数$n_0$が存在して$n>n_0$ならば$|a_n|^{1/n}	<	1/\kappa $
+（$r$を上極限で定義したい理由），
+したがって$|a_n|k^n	<1$となる．すなわち数列$\{|a_n|	\kappa ^n\}$は有界である．故に
+\begin{equation}
+	|a_n|	\leqq	\frac{M}{\kappa ^n}
+	\label{eq1.18}
+\end{equation}
+なる定数$M$が存在する．$|z|\kappa <1$であるから
+\[
+	\sum_{n=0}^\infty	|a_n	z^n|	\leqq	M	\sum_{n=0}^\infty	\left(\frac{|z|}{\kappa }	\right)^n
+	=
+	\frac{M	\kappa }{\kappa -|z|}	<	\infty.
+\]
+すなわち$|z|<r$のとき巾級数$\displaystyle	\sum_{n=0}^\infty	a_n	z^n$は絶対収束する．
+
+$\displaystyle	|z|	>	r	=	\frac{\displaystyle	1}{\displaystyle	\limsup_{n\rightarrow	\infty}|a_n|^{1/n}	}$
+のとき$\displaystyle\sum_{n=0}^\infty	a_n	z^n$が発散することは(\ref{eq1.17})によって
+((\ref{eq1.17})は「収束する」という仮定より導かれる結論であり，対偶をとると)
+明らかである．
+\■

@@ -1,0 +1,160 @@
+\chapter{正則関数}
+\section{正則関数}
+
+\subsection{複素平面}
+$z=x+iy$，$x,y$は実数，$i=\sqrt{-1}$，の形の数を
+\textbf{複素数}(complex number)という．
+二つの複素数$z = x + iy$，$w=u+iv$の和，差，積を
+\begin{align*}
+	&x + w = ( x+u ) + i(y+v),	\\
+  &z - w &= ( x-u ) + i(y-v),	\\
+  &zw = (xu -wv) + i(xv+ yu)
+\end{align*}
+と定義する．この定義は$z=x+ iy$，$w=u+iv$をまず‘変数’$i$の多項式と考えて
+$z + w $，$z-w$，$zw$を求め，その結果において$i^2$を$-1$で置き換えたものである．
+故にこのように定義された複素数の下方，減法，乗法に関して結合法則，
+交換法則，分配法則が成り立つ．
+
+（保留）
+
+\subsection{複素変数の関数}
+$D \subset \C$を複素数のある集合，すなわち複素平面$\C$の或る点集合とする．
+$D$に属するおのおのの複素数$\zeta$にそれぞれ一つの複素数$\omega$を対応させる対応を
+$D$で定義された関数といい$D$を関数$f$の\textbf{定義域}(domain)という．
+$f$によって$\zeta \in D$に対応する複素数$\omega$を$\zeta$における
+$f$の値といい，$\zeta$における$f$の値を$f(\zeta)$で表わす：
+\[
+	f(S) = \{ \: f(\zeta) \: | \: \zeta \in S \}.
+\]
+そして$f$の値$\omega = f(\zeta)$の全体の集合$f(D)$を関数$f$の\textbf{値域}(range)という．
+
+\begin{figure}[hbtp]
+	\centering
+	\includegraphics[bb=0 0 800 200,clip,width=10cm,height=5cm]{fig_note1.bmp}
+\end{figure}
+
+
+関数$f$を$f(z)$で表し，$z$を変数,$f(z)$を\textbf{複素変数}(complex variable) $z$の
+関数という．これに対して“解析入門”§2.1で導入した関数$f(x)$を実変数$x$の関数とよぶ．
+関数$f(z)$において，$z$はその定義域$D$に属する任意の複素数$\zeta$を代表する記号，
+あるいは$\zeta$を代表すべき場所を示す記号であることは実変数の関数の場合と同様である．
+以下一般の習慣に従って$D$に属する点を変数と同じ文字$z$で表す．
+また$w = f(z)$とおいて，$w$は$z$の関数であるという．
+
+複素平面上の開集合$U$が共通点を持たない二つの空でない開集合の合併集合
+とならないとき，$U$は\textbf{連結}(connected)であるという．
+\underline{開集合$U$が連結であるための必要かつ十分な条件は，
+$U$に属する任意の2点} \underline{$z,w$を$U$内に或る折線で結ぶことができることである}.
+連結開集合を\textbf{領域}(region)といい，領域の閉包を\textbf{閉領域}(closed region)という．
+本章では主として領域で定義された関数および閉領域で定義された関数を
+考察するが，まず一般の点集合$D \subset \C$で定義された関数の極限，連続性，等について
+述べる．
+
+\定義{1.1}
+$D$を複素平面$\C$上の点集合，$c$を$D$の一つの集積点，$\gamma$を複素数とする．
+任意の正の実数$\varepsilon$に対応して正の実数$\delta(\varepsilon)$を定めて
+\begin{equation}
+	0< | z - c | < \delta(\varepsilon) \quad \text{のとき} \quad
+ |f(z) - \gamma| < \varepsilon
+\label{eq1x5}
+\end{equation}
+となるようにできるならば，$z \rightarrow c$のとき$f(z)$は$\gamma$に収束する，
+$\gamma$は$z \rightarrow c$のときの$f(z)$の極限であるといい
+\[
+	\lim_{z \rightarrow c} f(z) = \gamma,
+\]
+あるいは
+\[
+	z \rightarrow c \quad \text{のとき} \quad f(z) \rightarrow \gamma
+\]
+と書く．$z \not\in D$のとき$f(z)$は定義されていないから，
+(\ref{eq1x5})においては$z \in D$と考えているのである．
+$c$を$D$の集積点としたのは$0 < | z -c | < \delta(\varepsilon), \: z \in D$，
+なる点$z$が一つも存在しない場合を除外するためである．------
+
+
+\underline{$z \rightarrow c$のとき$f(z)$が$\gamma$に収束するための必要かつ十分な条件は，
+$c$に収束するすべての複素数列$\{z_n \}$, \quad} 
+\underline{$  z_n \ne c$
+に対して複素数列$\{\: f(z_n) \: \}$が$\gamma$に収束することである．}
+証明は実変数の関数の場合と同様である．この結果と複素数列の収束に関する
+Cauchyの判定法(定理1.1)から，実変数の関数の場合と同様に，
+Cauchyの判定法が導かれる．
+
+\定理{1.2}
+(Cauchyの判定法)
+$f(z)$を$D \subset \C$で定義された複素変数$z$の関数，$c$を$D$の集積点とする．
+$z \rightarrow c$のとき$f(z)$が収束するための必要かつ十分な条件は任意の
+正の実数$\varepsilon$に対応して正の実数$\delta(\varepsilon)$が定まって
+\[
+	0 < |z - c| < \delta(\varepsilon), \quad 0 < | w-c| < \delta(\varepsilon)
+  \quad \text{ならば} \quad | f(z) - f(w) | < \varepsilon
+\]
+となることである．------
+
+$f(z)$を$D \subset \C$で定義された複素変数$z$の関数，
+$c$を$D$\underline{に属する}一つの複素数とする．このとき
+\begin{equation}
+	\lim_{z \rightarrow c} f(z)  = f(c)
+\label{eq1x6}
+\end{equation}
+ならば，関数$f(z)$は$c$で連続である，あるいは$z=c$で連続であるという．
+極限の定義までさかのぼっていえば，任意の正の実数$\varepsilon$に対応して正の実数
+$\delta(\varepsilon)$を定めて
+\[
+	|z-c| < \delta(\varepsilon) \quad \text{のとき} \quad | f(z) - f(c)| < \varepsilon
+\]
+となるようにできるならば，$f(z)$は$c$で連続であるというのである．
+($c$が$D$の孤立点である場合には，$\delta(\varepsilon)$を十分に小さくとったとき，
+$z \in D$，$|z - c| < \delta(\varepsilon)$ならば$z=c$となるから，
+$f(z)$はからなず$c$で連続である．)
+$z=x + iy  = (x,y), \ c=a+ib = (a,b)$とおき，
+$f(z)$を実数部と虚数部に分けて
+\[
+	f(z) = u(z) + iv (z), \quad u(z) = \text{Re } f(z), \quad v(z) = \text{Im } f(z),
+\]
+と書いて$u(z) = u(x+iy) = u(x,y), \: v(z) = v(x+iy) = v(x,y)$を二つの実変数
+$x,y$の関数と考えれば，
+\begin{align*}
+	|f(z) - f(c)| &= \sqrt{|u(x,y) - u(a,b)|^2 + |v(x,y) - v(a,b)|^2} \\
+                 & \leqq \sqrt{|u(x,y) - u(a,b)|^2} + \sqrt{|v(x,y) - v(a,b)|^2}
+\end{align*}
+であるから，(\ref{eq1x6})は
+\[
+	\lim_{(x,y) \rightarrow (a,b)} u(x,y) = u(a,b), \quad
+	\lim_{(x,y) \rightarrow (a,b)} v(x,y) = v(a,b), 
+\]
+と同値である．すなわち，\underline{複素変数$z = x + iy$の関数$f(z) = u(x,y)+ iv(x,y)$が
+$c = a+ib$で連続である }
+ \underline{ということはその実数部$u(x,y)$および虚数部$v(x,y)$が二つの実変数$x,y$の関数
+としての点$c=(a,b)$で連 }
+ \underline{続であることに他ならない.}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
